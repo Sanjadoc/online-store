@@ -1,0 +1,20 @@
+.formShop {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  &Error {
+    text-align: center;
+    color: var(--field-error);
+    margin-bottom: 0.5rem;
+  }
+}
+
+.form {
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 0 5px 0 var(--shadow-color);
+  width: 100%;
+  max-width: 25rem;
+  margin-top: 1.25rem;
+}

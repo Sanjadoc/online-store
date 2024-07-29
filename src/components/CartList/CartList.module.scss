@@ -1,0 +1,12 @@
+.cartList {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  grid-row-gap: 1.875rem;
+  row-gap: 1.875rem;
+  grid-area: list;
+
+  @media (min-width: 48rem) {
+    justify-content: flex-start;
+  }
+}

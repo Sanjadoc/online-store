@@ -1,0 +1,84 @@
+.product {
+  &Title {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  &Details {
+    @media (min-width: 48rem) {
+      display: flex;
+    }
+  }
+
+  &Box {
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
+
+    &Img {
+      width: 100%;
+      object-fit: cover;
+      transition: 0.25s all;
+      height: auto;
+      max-height: 25rem;
+      transform: scale(1);
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+  }
+
+  &Info {
+    padding: 1rem;
+
+    &Title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &Category {
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    &Price {
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+      &:first-child {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &Actions {
+    margin-top: 1rem;
+    text-align: center;
+
+    button {
+      max-width: 10rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  }
+  .ActiveBtn {
+    background-color: var(--primary-color);
+    color: var(--btn-active-color);
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &EmptyInfo {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}

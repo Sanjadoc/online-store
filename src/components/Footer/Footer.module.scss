@@ -1,0 +1,10 @@
+.footer {
+  padding: 1rem;
+  background-color: var(--bg-footer-color);
+
+  &Container {
+    max-width: 75rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

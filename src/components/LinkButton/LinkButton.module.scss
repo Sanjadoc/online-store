@@ -1,0 +1,9 @@
+.submitBtnLink {
+  text-decoration: underline;
+  font-size: 1rem;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}

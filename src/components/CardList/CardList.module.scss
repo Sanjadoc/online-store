@@ -1,0 +1,17 @@
+.cardList {
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 2.5rem;
+  justify-items: center;
+  padding-left: 0;
+  margin: 2.5rem 0 2.5rem;
+  list-style: none;
+  justify-content: center;
+  @media (min-width: 48rem) {
+    grid-template-columns: repeat(auto-fill, 15.625rem);
+  }
+  &Empty {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+}

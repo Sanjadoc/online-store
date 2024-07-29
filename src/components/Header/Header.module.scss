@@ -1,0 +1,91 @@
+.header {
+  box-shadow: 0 2px 5px 0 var(--shadow-color);
+
+  &Container {
+    max-width: 75rem;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.5rem 1.5rem;
+    @media screen and (min-width: 75rem) {
+      padding: 0;
+    }
+  }
+
+  .logo {
+    width: auto;
+    height: 3rem;
+    border-radius: 0.5rem;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    @media screen and (min-width: 25rem) {
+      flex-direction: row;
+    }
+
+    .navList {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+      margin-bottom: 1rem;
+      @media screen and (min-width: 25rem) {
+        margin-bottom: 0;
+      }
+
+      .item {
+        color: inherit;
+        font-weight: 500;
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+        a {
+          padding-top: 0.625rem;
+          padding-bottom: 0.625rem;
+          transition: 0.3s;
+          position: relative;
+          &:hover {
+            color: var(--link-hover);
+          }
+        }
+      }
+
+      .active {
+        color: var(--link-active);
+        position: relative;
+        transition: 0.3s;
+        text-decoration: underline;
+        text-underline-offset: 0.5rem;
+      }
+    }
+    & > a {
+      margin: 0.625rem 0;
+      &:hover {
+        color: var(--link-active);
+      }
+    }
+  }
+
+  .inCart {
+    position: absolute;
+    top: 0.3125rem;
+    right: -1rem;
+    font-size: 0.6875rem;
+    width: 0.875rem;
+    height: 0.875rem;
+    color: var(--link-active);
+  }
+
+  .user {
+    margin-right: 0.25rem;
+  }
+
+  .logOut {
+    button {
+      height: 1rem;
+      padding: 1rem 0.5rem;
+    }
+  }
+}

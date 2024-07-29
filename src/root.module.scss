@@ -1,0 +1,30 @@
+//general
+$primary-color: #4078f2;
+$secondary-color: #d1d1d17d;
+$disabled-color: #808080;
+$bg-disabled-color: #ccd7da50;
+$white-color: #ffffff;
+$field-error: #ff0000;
+$shadow-color: #dbdbdc;
+$outline-color: #2979ff;
+
+//links
+$link-hover: $primary-color;
+$link-active: #2979ff;
+
+//footer
+$bg-footer-color: #eaeaeb;
+
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --disabled-color: #{$disabled-color};
+  --bg-disabled-color: #{$bg-disabled-color};
+  --white-color: #{$white-color};
+  --field-error: #{$field-error};
+  --shadow-color: #{$shadow-color};
+  --outline-color: #{$outline-color};
+  --link-hover: #{$link-hover};
+  --link-active: #{$link-active};
+  --bg-footer-color: #{$bg-footer-color};
+}

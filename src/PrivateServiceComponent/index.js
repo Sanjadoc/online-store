@@ -1,0 +1,1 @@
+export { PrivateServiceComponent } from './PrivateServiceComponent';
