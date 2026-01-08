@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// eslint-disable-next-line no-undef
 const baseURL = process.env.REACT_APP_BASE_URL_API;
 
 const apiInstance = axios.create({

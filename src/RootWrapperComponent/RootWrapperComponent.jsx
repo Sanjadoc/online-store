@@ -1,20 +1,28 @@
-const { useState, useEffect } = require('react');
-const { useDispatch } = require('react-redux');
-const { Outlet } = require('react-router-dom');
+import { useEffect, useState } from 'react';
 
-const { Loader } = require('components/Loader');
-
+import { Loader } from 'components/Loader';
+import { Outlet } from 'react-router-dom';
 import { fetchUserData } from 'store/user/effects';
+import { useDispatch } from 'react-redux';
 
 export const RootWrapperComponent = () => {
   const dispatch = useDispatch();
-
   const [isLoading, setLoading] = useState(true);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-    dispatch(fetchUserData());
-    setLoading(false);
-  }, []);
+    const initializeAuth = async () => {
+      await dispatch(fetchUserData());
+      setIsInitialized(true);
+      setLoading(false);
+    };
 
-  return isLoading ? <Loader /> : <Outlet />;
+    initializeAuth();
+  }, [dispatch]);
+
+  if (isLoading || !isInitialized) {
+    return <Loader />;
+  }
+
+  return <Outlet />;
 };

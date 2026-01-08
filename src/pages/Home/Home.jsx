@@ -2,7 +2,7 @@ import {
   selectorCardsLoading,
   selectorFilteredCardsList,
   selectorFilters
-} from 'store/cards/selectors';
+} from 'store/cards/cardsSlice';
 import { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -10,11 +10,11 @@ import { CardsList } from 'components/CardList/CardList';
 import { FILTER_DELAY_TIMEOUT } from 'constants';
 import { Loader } from 'components/Loader';
 import { ProductFilters } from 'components/ProductFilters';
-import { addToCart } from 'store/cart/actions';
+import { addToCart } from 'store/cart/cartSlice';
 import { debounce } from 'lodash';
 import { fetchCardsList } from 'store/cards/effects';
 import styles from './Home.module.scss';
-import { updateFilters } from 'store/cards/actions';
+import { updateFilters } from 'store/cards/cardsSlice';
 
 export const Home = () => {
   const dispatch = useDispatch();

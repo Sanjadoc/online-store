@@ -1,12 +1,13 @@
 import { getUserData, loginUser } from 'services/userServices';
-import { logOut, setUser } from './actions';
+import { setUser, setUserLogout } from './userSlice';
 
 import { USER_LOCAL_STORAGE_LOGIN_KEY } from 'constants';
 
 export const fetchUserData = () => async (dispatch) => {
   try {
-    const user = await getUserData();
+    const user = getUserData();
     dispatch(setUser(user));
+    // eslint-disable-next-line no-unused-vars
   } catch (error) {
     dispatch(setUser(null));
   }
@@ -24,6 +25,7 @@ export const loginUserEffect = (value) => async (dispatch) => {
 };
 
 export const logoutUserEffect = () => (dispatch) => {
+  // eslint-disable-next-line no-undef
   window.localStorage.removeItem(USER_LOCAL_STORAGE_LOGIN_KEY);
-  dispatch(logOut());
+  dispatch(setUserLogout());
 };

@@ -7,7 +7,7 @@ import { CustomInputFormik } from 'components/CustomInputFormik';
 import { DropdownCategories } from 'components/DropdownCategories';
 import { FormikObserver } from 'components/FormikObserver';
 import PropTypes from 'prop-types';
-import { initialFiltersState } from 'store/cards/reducer';
+import { initialFiltersState } from 'store/cards/cardsSlice';
 import styles from './ProductFilters.module.scss';
 
 const priceOptions = [

@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 
 export const getUserData = () => {
   try {
+    // eslint-disable-next-line no-undef
     const user = localStorage.getItem(USER_LOCAL_STORAGE_LOGIN_KEY);
     return user ? JSON.parse(user) : null;
   } catch (error) {
@@ -24,7 +25,8 @@ export const loginUser = async (values) => {
       }
     });
 
-    if (data && data.token) {
+    if (data && data.accessToken) {
+      // eslint-disable-next-line no-undef
       localStorage.setItem(USER_LOCAL_STORAGE_LOGIN_KEY, JSON.stringify(data));
       return data;
     }
@@ -39,6 +41,7 @@ export const loginUser = async (values) => {
 
 export const regUserData = ({ values, history }) => {
   try {
+    // eslint-disable-next-line no-undef
     window.localStorage.setItem(USER_LOCAL_STORAGE_REG_KEY, JSON.stringify(values));
 
     history('/login');

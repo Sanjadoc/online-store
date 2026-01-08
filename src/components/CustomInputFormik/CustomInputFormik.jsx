@@ -1,10 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useField } from 'formik';
-
 import { Button } from 'components/Button';
-
+import PropTypes from 'prop-types';
+import React from 'react';
 import styles from './CustomInputFormik.module.scss';
+import { useField } from 'formik';
 
 export const CustomInputFormik = ({ label, clearable = false, ...props }) => {
   const [field, meta, helpers] = useField(props);

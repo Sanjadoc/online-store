@@ -1,7 +1,7 @@
-import { useSelector } from 'react-redux';
-import { Outlet, Navigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 
-import { selectorUser } from 'store/user/selectors';
+import { selectorUser } from 'store/user/userSlice';
+import { useSelector } from 'react-redux';
 
 export const PublicRouter = () => {
   const user = useSelector(selectorUser);

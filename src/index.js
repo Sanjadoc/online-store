@@ -1,20 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import 'react-image-gallery/styles/css/image-gallery.css';
-
-import { Provider } from 'react-redux';
-import { store } from 'store/store';
-
-import { Routing } from 'routes';
-
-import { ErrorBoundary } from 'components/ErrorBoundary';
-
 import './root.module.scss';
 
+import { ErrorBoundary } from 'components/ErrorBoundary';
+import { Provider } from 'react-redux';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Routing } from 'routes';
+import { ToastContainer } from 'react-toastify';
+import reportWebVitals from './reportWebVitals';
+import { store } from 'store/store';
+
+// eslint-disable-next-line no-undef
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

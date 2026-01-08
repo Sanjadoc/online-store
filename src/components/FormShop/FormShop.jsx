@@ -1,12 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Formik, Form } from 'formik';
+import { Form, Formik } from 'formik';
 
 import { Button } from 'components/Button';
 import { CustomInputFormik } from 'components/CustomInputFormik';
-
 import { FormSchema } from './validator/FormSchema';
-
+import PropTypes from 'prop-types';
+import React from 'react';
 import styles from './FormShop.module.scss';
 
 export const initialFormState = {

@@ -7,6 +7,7 @@ export const getGoodsListData = (searchTerm) => {
       return response;
     })
     .catch((error) => {
+      // eslint-disable-next-line no-undef
       console.error('Error in getGoodsListData:', error);
       throw error;
     });

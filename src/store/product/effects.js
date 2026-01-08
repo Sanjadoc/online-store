@@ -1,14 +1,16 @@
+import { setProduct, setProductLoading } from './productSlice';
+
 import { getProductData } from 'services/goodsServices';
-import { setProduct, setIsProductLoading } from './actions';
 
 export const fetchProduct = (id) => async (dispatch) => {
-  dispatch(setIsProductLoading(true));
+  dispatch(setProductLoading(true));
   try {
     const productData = await getProductData(id);
     dispatch(setProduct(productData.data));
+    // eslint-disable-next-line no-unused-vars
   } catch (error) {
     dispatch(setProduct(null));
   } finally {
-    dispatch(setIsProductLoading(false));
+    dispatch(setProductLoading(false));
   }
 };

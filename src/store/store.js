@@ -1,19 +1,18 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import { composeWithDevTools } from '@redux-devtools/extension';
+import cardsSlice from './cards/cardsSlice';
+import cartSlice from './cart/cartSlice';
+import categoriesSlice from './categories/categoriesSlice';
+import { configureStore } from '@reduxjs/toolkit';
+import productSlice from './product/productSlice';
+import userSlice from './user/userSlice';
 
-import { userReducer } from './user/reducer';
-import { cardsReducer } from './cards/reducer';
-import { productReducer } from './product/reducer';
-import { cartReducer } from './cart/reducer';
-import { categoriesReducer } from './categories/reducer';
-
-const rootReducer = combineReducers({
-  user: userReducer,
-  product: productReducer,
-  cards: cardsReducer,
-  cart: cartReducer,
-  categories: categoriesReducer
+export const store = configureStore({
+  reducer: {
+    user: userSlice.reducer,
+    product: productSlice.reducer,
+    cards: cardsSlice.reducer,
+    cart: cartSlice.reducer,
+    categories: categoriesSlice.reducer
+  },
+  devTools: true,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware()
 });
-
-export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

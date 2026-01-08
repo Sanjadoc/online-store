@@ -1,9 +1,11 @@
-import { decrementQuantity, incrementQuantity, removeFromCart } from 'store/cart/actions';
 import {
+  decrementQuantity,
+  incrementQuantity,
+  removeFromCart,
   selectorCartList,
   selectorCartTotalItems,
   selectorCartTotalPrice
-} from 'store/cart/selectors';
+} from 'store/cart/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { CartList } from 'components/CartList/CartList';

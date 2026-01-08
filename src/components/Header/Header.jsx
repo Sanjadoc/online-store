@@ -1,14 +1,12 @@
-import { useCallback } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Button } from 'components/Button';
 import { logoutUserEffect } from 'store/user/effects';
-import { selectorUser } from 'store/user/selectors';
-
-import { selectorCartTotalItems } from 'store/cart/selectors';
-
+import { selectorCartTotalItems } from 'store/cart/cartSlice';
+import { selectorUser } from 'store/user/userSlice';
 import styles from './Header.module.scss';
+import { useCallback } from 'react';
 
 const menuLinks = [
   { link: '/', title: 'Home' },

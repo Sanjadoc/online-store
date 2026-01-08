@@ -1,3 +1,0 @@
-export const SET_PRODUCT = 'SET_PRODUCT';
-export const CLEAR_PRODUCT = 'CLEAR_PRODUCT';
-export const SET_PRODUCT_LOADING = 'SET_PRODUCT_LOADING';

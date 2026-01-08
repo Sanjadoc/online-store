@@ -3,7 +3,7 @@ import { useCallback, useMemo } from 'react';
 import { Button } from 'components/Button';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { selectorIsItemInCart } from 'store/cart/selectors';
+import { selectorIsItemInCart } from 'store/cart/cartSlice';
 import styles from './Card.module.scss';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
@@ -13,15 +13,23 @@ const placeholderImgSrc = 'assets/img/not-found-img-1.png';
 export const CardProduct = (card) => {
   const { id, title, category, price, thumbnail, stock, description, addToCartHandler } = card;
 
+  const cardData = useMemo(
+    () => ({ id, title, category, price, thumbnail, stock, description }),
+    [id, title, category, price, thumbnail, stock, description]
+  );
+
   const isItemInCart = useSelector(selectorIsItemInCart(id));
 
   const buttonClassName = useMemo(() => (isItemInCart ? styles.cardActiveBtn : ''), [isItemInCart]);
 
-  const addToCartClickHandler = useCallback((e) => {
-    e.preventDefault();
-    addToCartHandler(card);
-    toast.success(`${title} added to cart!`);
-  }, []);
+  const addToCartClickHandler = useCallback(
+    (e) => {
+      e.preventDefault();
+      addToCartHandler(cardData);
+      toast.success(`${title} added to cart!`);
+    },
+    [addToCartHandler, cardData, title]
+  );
 
   return (
     <li className={styles.card}>

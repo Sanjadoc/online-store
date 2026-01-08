@@ -1,13 +1,15 @@
+import { setCategories, setCategoriesLoading } from './categoriesSlice';
+
 import { getProductCategories } from 'services/goodsServices';
-import { setAllCategories, setCategoriesLoading } from './actions';
 
 export const fetchCategoriesList = () => async (dispatch) => {
   dispatch(setCategoriesLoading(true));
   try {
     const categoriesResponse = await getProductCategories();
-    dispatch(setAllCategories(categoriesResponse.data));
+    dispatch(setCategories(categoriesResponse.data));
+    // eslint-disable-next-line no-unused-vars
   } catch (error) {
-    dispatch(setAllCategories([]));
+    dispatch(setCategories([]));
   } finally {
     dispatch(setCategoriesLoading(false));
   }

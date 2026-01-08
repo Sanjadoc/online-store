@@ -1,20 +1,17 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import ImageGallery from 'react-image-gallery';
 
-import { Loader } from 'components/Loader';
 import { Button } from 'components/Button';
-
+import ImageGallery from 'react-image-gallery';
+import { Loader } from 'components/Loader';
+import { addToCart } from 'store/cart/cartSlice';
+import { clearProduct } from 'store/product/productSlice';
 import { fetchProduct } from 'store/product/effects';
-import { selectorProduct } from 'store/product/selectors';
-import { clearProduct } from 'store/product/actions';
-
-import { addToCart } from 'store/cart/actions';
-import { selectorIsItemInCart } from 'store/cart/selectors';
-
+import { selectorIsItemInCart } from 'store/cart/cartSlice';
+import { selectorProduct } from 'store/product/productSlice';
 import styles from './Product.module.scss';
+import { toast } from 'react-toastify';
+import { useParams } from 'react-router-dom';
 
 const placeholderImgSrc = 'assets/img/not-found-img-1.png';
 

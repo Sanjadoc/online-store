@@ -1,22 +1,26 @@
-import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
-
 import { FormShop } from 'components/FormShop';
 import { LinkButton } from 'components/LinkButton';
-
 import { loginUserEffect } from 'store/user/effects';
-
 import styles from './Login.module.scss';
+import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleSubmit = useCallback(async (values, { setStatus }) => {
-    const response = await dispatch(loginUserEffect(values));
-    if (response !== null) {
-      setStatus({ loginError: response.message });
-    }
-  });
+  const handleSubmit = useCallback(
+    async (values, { setStatus }) => {
+      const response = await dispatch(loginUserEffect(values));
+      if (response !== null) {
+        setStatus({ loginError: response.message });
+      } else {
+        navigate('/');
+      }
+    },
+    [dispatch, navigate]
+  );
 
   return (
     <div className={styles.loginPage}>

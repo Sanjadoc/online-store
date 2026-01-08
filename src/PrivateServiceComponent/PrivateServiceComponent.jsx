@@ -1,9 +1,8 @@
+import { Outlet } from 'react-router-dom';
+import { clearCart } from 'store/cart/cartSlice';
+import { clearFilters } from 'store/cards/cardsSlice';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-const { useDispatch } = require('react-redux');
-const { Outlet } = require('react-router-dom');
-
-import { clearFilters } from 'store/cards/actions';
-import { clearCart } from 'store/cart/actions';
 
 export const PrivateServiceComponent = () => {
   const dispatch = useDispatch();

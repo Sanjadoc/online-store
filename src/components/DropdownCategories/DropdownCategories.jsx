@@ -1,4 +1,4 @@
-import { selectorAllCategories, selectorCategoriesLoading } from 'store/categories/selectors';
+import { selectorAllCategories, selectorCategoriesLoading } from 'store/categories/categoriesSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { CustomDropdownFormik } from 'components/CustomDropdownFormik';
